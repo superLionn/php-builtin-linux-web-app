@@ -26,6 +26,8 @@ jobs:
         uses: andstor/file-existence-action@v1
         with:
           files: 'composer.json'
+              
+      - name: updaste composer
         run: composer update
 
       - name: Run composer install if composer.json exists
