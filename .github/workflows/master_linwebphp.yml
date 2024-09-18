@@ -22,11 +22,7 @@ jobs:
           php-version: '8.2'
           
       - name: Run pre-build script
-        run: |
-          echo "Running pre-build script..."
-          # Clear the wwwroot directory
-          rm -rf --one-file-system /home/site/wwwroot
-          echo "Pre-build script completed."
+        run: rm -rf --one-file-system /home/site/wwwroot
           
       - name: Check if composer.json exists
         id: check_files
