@@ -20,7 +20,10 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          
+
+      - name: Make the script files executable
+        run: chmod +x pre-build.sh
+        
       - name: Run pre-build script
         run: ./pre-build.sh
           
