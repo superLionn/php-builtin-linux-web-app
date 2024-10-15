@@ -21,12 +21,6 @@ jobs:
         with:
           php-version: '8.2'
 
-      - name: Make the script files executable
-        run: chmod +x pre-build.sh
-        
-      - name: Run pre-build script
-        run: ./pre-build.sh
-          
       - name: Check if composer.json exists
         id: check_files
         uses: andstor/file-existence-action@v1
@@ -57,6 +51,12 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
+      - name: Make the script files executable
+        run: chmod +x pre-build.sh
+        
+      - name: Run pre-build script
+        run: ./pre-build.sh
+        
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
